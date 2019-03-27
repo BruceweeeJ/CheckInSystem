@@ -20,10 +20,10 @@ export class ShowUserPage implements OnInit {
     async initCourse() {
         console.log('接收数据中....');
         this.user.userId = 5;
-        await this.http.post('http://localhost:8080/CheckInServer/showUser', {
-          'userId': this.user.userId}).toPromise().then((response: any) => {
-            this.userList = response;
-            console.log(this.userList);
+        await this.http.post('http://localhost:8080/selectAll', {
+        }).toPromise().then((response: any) => {
+            //this.userList = response;
+            console.log(response);
         });
     }
     on() {
